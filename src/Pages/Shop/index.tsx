@@ -3,10 +3,13 @@ import { View, Text, FlatList } from "react-native";
 import { styles } from "./styles";
 import { MagicItem } from "../../components/MagicItem";
 import { MagicItemProps, getMagicItemList } from '../../services/dndApi';
+import { MagicItemDetailsModal } from '../../components/Modals/MagicItemDetailsModal';
 
 export const Shop = () => {
     const [magicItemList, setMagicItemList] = useState<MagicItemProps[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
+    const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+    const [chosenMagicItemIndex, setChosenMagicItemIndex] = useState<string>('');
 
     async function fillMagicItemList() {
         try {
@@ -37,9 +40,18 @@ export const Shop = () => {
                     data={magicItemList}
                     renderItem={({ item }) => {
                         return <MagicItem
+                            setChosenMagicItemIndex={setChosenMagicItemIndex}
+                            setIsModalVisible={setIsModalVisible}
                             item={item}
                         />
                     }}
+                />
+            }
+            {isModalVisible &&
+                <MagicItemDetailsModal
+                    chosenMagicItemIndex={chosenMagicItemIndex}
+                    isModalVisible={isModalVisible}
+                    setIsModalVisible={setIsModalVisible}
                 />
             }
         </View>

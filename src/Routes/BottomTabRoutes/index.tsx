@@ -4,12 +4,15 @@ import { Shop } from '../../Pages/Shop';
 import { Image } from 'react-native';
 import SkillsIcon from '../../assets/icons/skillsIcon.png';
 import ShopIcon from '../../assets/icons/shopIcon.png';
+import CartIcon from '../../assets/icons/cartIcon.png';
+import { Cart } from '../../Pages/Cart';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
     Skill: undefined,
-    Shop: undefined
+    Shop: undefined,
+    Cart: undefined
 }
 
 export function BottomTabRoutes() {
@@ -48,6 +51,19 @@ export function BottomTabRoutes() {
                 }}
                 name="Shop"
                 component={Shop}
+            />
+            <Tab.Screen
+                options={{
+                    tabBarIcon: ({ color }) => {
+                        return <Image
+                            resizeMode='contain'
+                            source={CartIcon}
+                            style={{ tintColor: color, width: 30 }}
+                        />
+                    }
+                }}
+                name="Cart"
+                component={Cart}
             />
         </Tab.Navigator>
     );
