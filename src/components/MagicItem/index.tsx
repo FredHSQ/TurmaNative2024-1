@@ -4,8 +4,8 @@ import { MagicItemProps } from "../../services/dndApi";
 
 interface MagicItemComponentProps extends TouchableOpacityProps {
     item: MagicItemProps,
-    setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
-    setChosenMagicItemIndex: React.Dispatch<React.SetStateAction<string>>
+    setIsModalVisible?: React.Dispatch<React.SetStateAction<boolean>>,
+    setChosenMagicItemIndex?: React.Dispatch<React.SetStateAction<string>>
 }
 
 export const MagicItem = ({ item, setIsModalVisible, setChosenMagicItemIndex, ...rest }: MagicItemComponentProps) => {

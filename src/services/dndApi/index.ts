@@ -6,8 +6,7 @@ const apiDnd = axios.create({
 
 export interface MagicItemProps {
     index: string,
-    name: string,
-    url: string
+    name: string
 };
 
 export interface getMagicItemListProps {

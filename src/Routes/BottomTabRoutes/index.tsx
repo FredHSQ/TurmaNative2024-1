@@ -1,11 +1,11 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Skill } from '../../Pages/Skills';
-import { Shop } from '../../Pages/Shop';
 import { Image } from 'react-native';
-import SkillsIcon from '../../assets/icons/skillsIcon.png';
-import ShopIcon from '../../assets/icons/shopIcon.png';
-import CartIcon from '../../assets/icons/cartIcon.png';
 import { Cart } from '../../Pages/Cart';
+import { Shop } from '../../Pages/Shop';
+import { Skill } from '../../Pages/Skills';
+import CartIcon from '../../assets/icons/cartIcon.png';
+import ShopIcon from '../../assets/icons/shopIcon.png';
+import SkillsIcon from '../../assets/icons/skillsIcon.png';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
